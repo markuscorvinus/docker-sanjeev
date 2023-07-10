@@ -1,0 +1,13 @@
+#docker-compose up/down -d
+# to rebuild image, add --build in after docker-compose up
+version: '3'
+services:
+  react-app:
+    build: ./
+    container_name: react_con
+    ports:
+      - '80:3000'
+    volumes:
+      - ./src:/app/src
+    env_file:
+      - ./.env
