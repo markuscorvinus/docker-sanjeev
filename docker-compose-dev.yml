@@ -1,0 +1,18 @@
+#docker-compose up/down -d
+# to specify a file, run docker-compose -f filename.yaml
+# to rebuild image, add --build in after docker-compose up
+version: '3'
+services:
+  react-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: react_con
+    ports:
+      - '81:3000'
+    volumes:
+      - ./src:/app/src 
+    environment:
+       - REACT_APP_NAME=ImDev
+    # env_file:
+    #   - ./.env

@@ -2,5 +2,5 @@ node_modules
 Dockerfile
 .git
 .gitignore
-.env
 .dockerignore
+.build

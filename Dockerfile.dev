@@ -20,5 +20,5 @@ EXPOSE 3000
 #docker run --name react_con -v "%cd%\src":/app/src -d -p 80:3000 react/app
 #-- add "-e REACT_APP_NAME=Makoto" for passing env variable via cli
 #-- add "-env-file ./.env" for passing env file directly to container. You may add .env variables to .env file
-
+#-- if  using Dockerfile.ddoev, run using 'docker build -t reactapp -f Dockerfile.dev .'
 CMD [ "npm", "start" ]

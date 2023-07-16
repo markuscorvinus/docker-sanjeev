@@ -1,0 +1,17 @@
+#docker-compose up/down -d
+# to specify a file, run docker-compose -f filename.yaml
+# to rebuild image, add --build in after docker-compose up
+# docker-compose -f docker-compose.yml -f docker-compose-dev.yml up -d build
+version: '3'
+services:
+  react-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+      arg:  
+        - REACT_APP_NAME=ImProdgit 
+    container_name: react_con
+    ports:
+      - '80:3000'
+    # env_file:
+    #   - ./.env
